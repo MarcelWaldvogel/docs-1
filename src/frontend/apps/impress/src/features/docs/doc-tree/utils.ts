@@ -68,11 +68,9 @@ export const syncDocInTree = (
 };
 
 /**
- * Same as `syncDocInTree`, for fields the tree does not display.
- *
- * `updateNode` re-renders the row, which re-inserts its DOM node and drops the
- * focus held inside it. Mutating the value skips that render: the options menu
- * is the only reader, and it reads the value again on each open.
+ * For a field the tree does not show. `updateNode` rebuilds the row and
+ * drops the focus inside it. The options menu reads the value again when
+ * it opens.
  */
 export const patchDocInTree = (
   treeContext: TreeContextType<Doc> | null,
@@ -124,9 +122,9 @@ export const addDocToTree = (
 };
 
 /**
- * Removes a doc from the tree once `navigation` resolves, deferred by the
- * same delay used elsewhere (DocToolBox move/remove) so react-arborist isn't
- * asked to delete a node that's still selected mid route transition.
+ * For a field the tree does not show. `updateNode` rebuilds the row and
+ * drops the focus inside it. The options menu reads the value again when
+ * it opens.
  */
 export const deleteDocFromTreeAfterNavigate = (
   treeContext: TreeContextType<Doc | null> | null,
